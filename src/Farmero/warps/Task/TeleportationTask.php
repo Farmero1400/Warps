@@ -39,14 +39,10 @@ class TeleportationTask extends Task
         if ($player->getPosition()->getFloorX() === $this->startPosition->getFloorX() &&
             $player->getPosition()->getFloorY() === $this->startPosition->getFloorY() &&
             $player->getPosition()->getFloorZ() === $this->startPosition->getFloorZ()) {
-            $player->sendTip(Warps::getConfigReplace("warp_tip_cooldown", ["{time}"], [$this->timer]));
-            $player->sendTitle(Warps::getConfigReplace("warp_title_cooldown"));
+            $player->sendTip(Warps::getConfigReplace("warp_msg_cooldown", ["{time}"], [$this->timer]));
             $this->timer--;
         } else {
-            $player->sendMessage(Warps::getConfigReplace("warp_tip_cancel"));
             $player->sendMessage(Warps::getConfigReplace("warp_msg_cancel"));
-            $player->sendTitle(Warps::getConfigReplace("warp_title_cancel"));
-            $player->sendSubtitle(Warps::getConfigReplace("warp_subtitle_cancel"));
             $player->getEffects()->remove(VanillaEffects::BLINDNESS());
             $this->getHandler()->cancel();
             return;
@@ -56,10 +52,7 @@ class TeleportationTask extends Task
             $player->getEffects()->remove(VanillaEffects::BLINDNESS());
             $warpAPI = new WarpAPI();
             $player->teleport($warpAPI->getWarp($this->warp));
-            $player->sendTip(Warps::getConfigReplace("warp_tip_teleport"));
-            $player->sendMessage(Warps::getConfigReplace("warp_msg_teleport"));
-            $player->sendTitle(Warps::getConfigReplace("warp_title_teleport"));
-            $player->sendSubtitle(Warps::getConfigReplace("warp_subtitle_teleport"));
+            $player->sendTip(Warps::getConfigReplace("warp_msg_teleport"));
             $this->getHandler()->cancel();
             return;
         }
