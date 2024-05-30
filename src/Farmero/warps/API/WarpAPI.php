@@ -37,6 +37,7 @@ class WarpAPI
     public function addWarp(Player $pos, string $name): void
     {
         $this->data->set($name, [$pos->getPosition()->getX(), $pos->getPosition()->getY(), $pos->getPosition()->getZ(), $pos->getWorld()->getDisplayName()]);
+        $this->save();
     }
 
     public function getWarp(string $name): Position
@@ -48,6 +49,7 @@ class WarpAPI
     public function delWarp(string $name): void
     {
         $this->data->remove($name);
+        $this->save();
     }
 
     public function save(): void
