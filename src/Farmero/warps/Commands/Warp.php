@@ -48,7 +48,7 @@ class Warp extends Command implements PluginOwned
                     $sender->teleport($this->warpAPI->getWarp($args[0]));
                     $sender->sendMessage(Warps::getConfigReplace("warp_msg_teleport"));
                 } else {
-                    $sender->getEffects()->add(new EffectInstance(VanillaEffects::BLINDNESS(), 20 * (WarpDelay::getConfigValue("delay") + 2), 10));
+                    $sender->getEffects()->add(new EffectInstance(VanillaEffects::BLINDNESS(), 20 * (Warps::getConfigValue("delay") + 2), 10));
                     new TeleportationTask($sender, $args[0]);
                 }
             } else {
