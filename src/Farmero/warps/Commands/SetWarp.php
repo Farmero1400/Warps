@@ -10,7 +10,7 @@ use pocketmine\player\Player;
 use pocketmine\plugin\PluginOwned;
 use pocketmine\plugin\Plugin;
 
-use Farmero\warps\WarpDelay;
+use Farmero\warps\Warps;
 use Farmero\warps\API\WarpAPI;
 
 class SetWarp extends Command implements PluginOwned
