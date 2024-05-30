@@ -41,7 +41,6 @@ class TeleportationTask extends Task
             $player->getPosition()->getFloorZ() === $this->startPosition->getFloorZ()) {
             $player->sendTip(Warps::getConfigReplace("warp_tip_cooldown", ["{time}"], [$this->timer]));
             $player->sendTitle(Warps::getConfigReplace("warp_title_cooldown"));
-            $player->sendSubtitle(Warps::getConfigReplace("warp_subtitle_cooldown"));
             $this->timer--;
         } else {
             $player->sendMessage(Warps::getConfigReplace("warp_tip_cancel"));
