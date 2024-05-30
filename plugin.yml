@@ -1,0 +1,16 @@
+name: Warps
+version: 1.0.0
+author: Farmero
+api: 5.0.0
+main: Farmero\warps\Warps
+
+permissions:
+  warps.cmd.setwarp:
+    description: Allows the OP to set a warp.
+    default: op
+  warps.cmd.delwarp:
+    description: Allows the OP to delete a warp.
+    default: op
+  warps.cmd.warp:
+    description: Allows the player to teleport to a warp.
+    default: true
