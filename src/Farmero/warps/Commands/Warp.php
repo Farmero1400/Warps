@@ -44,7 +44,7 @@ class Warp extends Command implements PluginOwned
             $command = explode(":", Warps::getConfigValue("warp_cmd"));
             if ((isset($command[2])) and (Warps::hasPermissionPlayer($sender, $command[2]))) return;
             if ((isset($args[0])) and ($this->warpAPI->existWarp($args[0]))) {
-                if (($sender->hasPermission("shadowwarps.cmd.warps"))) {
+                if (($sender->hasPermission("warps.cmd.warps"))) {
                     $sender->teleport($this->warpAPI->getWarp($args[0]));
                     $sender->sendMessage(Warps::getConfigReplace("warp_msg_teleport"));
                 } else {
