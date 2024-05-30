@@ -16,16 +16,23 @@ warp_cmd: "warp:Teleport to a warp"
 warp_aliases: []
 
 # Warp teleport message after the player has been teleported and the countdown has ended
+warp_tip_teleport: "{prefix}You have been teleported to the warp!"
 warp_msg_teleport: "{prefix}You have been teleported to the warp!"
+warp_title_teleport: "Teleported!"
+warp_subtitle_teleport: "You have been teleported to the warp!"
 
 # If form set to false you can edit the message list that will appear in chat
 warp_msg_list: "{prefix}here is the list of warps: {warp}"
 
 # Player has moved or canceled the teleportation
+warp_tip_cancel: "{prefix}Teleportation has been canceled, you moved!"
 warp_msg_cancel: "{prefix}Teleportation has been canceled, you moved!"
+warp_title_cancel: "Error!"
+warp_subtitle_cancel: "Dont move!"
 
 # Countdown before the teleportation
 warp_msg_cooldown: "{prefix}The teleportation will be done in {time} seconds!"
+warp_title_cooldown: "Dont move!"
 # ----------------------------------
 
 # Customize your command
